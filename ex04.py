@@ -36,7 +36,9 @@ print "Study Drill"
 # 1. It's not necessary -- we're counting number of people, therefore expecting
 # round numbers. 
 
-# 2. More accurate, no round downs, has decimal points
+# 2. More accurate, no round downs, has decimal points. 
+# Floats may also be in scientific notation, with E or e indicating the 
+# power of 10 (2.5e2 = 2.5 x 102 = 250).
 
 # 4. '=' (equals) assigns a value to a variable
 
