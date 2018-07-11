@@ -32,3 +32,9 @@ triple single quote
 '''
 
 # 3. 
+print """\"She said, \"My favorite quote is:
+\'You is smart, you is kind, you is important\'.\" 
+But she cannot remember what movie it's from.\""""
+
+# 4.
+print "The first day of the \'%s\' is %r." % ('week', 'Mon')
