@@ -21,7 +21,7 @@ for num in numbers:
 def print_while_loop(int):
 	a = 0
 	while a < int:
-		print "a is %d" % i
+		print "a is %d" % a
 		numbers.append(a)
 		a += 1
 
@@ -29,3 +29,13 @@ def print_while_loop(int):
 print "int = 0\n", print_while_loop(0) # Print "None". I expected it to print just nothing
 print "int = 1\n", print_while_loop(1)
 print "int = 10\n", print_while_loop(10)
+
+# 3.
+def print_while_loop2(int, increment):
+	a = 0
+	while a < int:
+		print "a is %d" % a
+		numbers.append(a)
+		a += increment
+	
+print "int = 11, increment = 5\n", print_while_loop2(11, 5) # 0, 5, 10
