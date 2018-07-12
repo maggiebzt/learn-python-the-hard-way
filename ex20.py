@@ -36,9 +36,9 @@ current_line = 1
 print_a_line(current_line, current_file) # current_line = 1
 
 # Print the second line of current file
-current_line = current_line + 1
+current_line += 1
 print_a_line(current_line, current_file) # current_line = 2
 
 # Print the third line of current file
-current_line = current_line + 1
+current_line += 1
 print_a_line(current_line, current_file) # current_line = 3
