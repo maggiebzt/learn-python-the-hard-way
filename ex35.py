@@ -3,21 +3,19 @@ from sys import exit
 prompt = "> "
 
 def gold_room():
-	"""You win the game if you're not greedy, loses if you're greedy."""
-	
+	"""You win the game if you're not greedy, loses if you're greedy
+	or can't type a number."""
 	print "This room is full of gold. How much do you take?"
+	print "Type number only."
 	
-	next = raw_input(prompt)
-	if "0" in next or "1" in next:
-		how_much = int(next)
-	else:
-		dead("Man, learn to type a number.")
-	
-	if how_much < 50:
+	next = int(raw_input(prompt))
+	if next < 50:
 		print "Nice, you're not greedy, you win!"
 		exit(0)
-	else:
+	elif next >= 50:
 		dead("You greedy bastard!")
+	else:
+		dead("Man, learn to type a number.")
 
 def bear_room():
 	"""Allows user to advance to the next room iff bear is moved from the door.
@@ -26,12 +24,12 @@ def bear_room():
 	print "The bear has a bunch of honey."
 	print "The fat bear is in front of another door."
 	print "How are you going to move the bear?"
-	print "1 = take honey"
-	print "2 = taunt bear"
-	print "3 = open door"
 	bear_moved = False
 	
 	while True:
+		print "1 = take honey"
+		print "2 = taunt bear"
+		print "3 = open door"
 		next = raw_input(prompt)
 		
 		if next == "1":
