@@ -26,19 +26,22 @@ def bear_room():
 	print "The bear has a bunch of honey."
 	print "The fat bear is in front of another door."
 	print "How are you going to move the bear?"
+	print "1 = take honey"
+	print "2 = taunt bear"
+	print "3 = open door"
 	bear_moved = False
 	
 	while True:
 		next = raw_input(prompt)
 		
-		if next == "take honey":
+		if next == "1":
 			dead("The bear looks at you then slaps your face off")
-		elif next == "taunt bear" and not bear_moved:
+		elif next == "2" and not bear_moved:
 			print "The bear has moved from the door, you can go through"
 			bear_moved = True
-		elif next == "taunt bear" and bear_moved:
+		elif next == "2" and bear_moved:
 			dead("The bear is pissed and chew your leg off")
-		elif next == "open door" and bear_moved:
+		elif next == "3" and bear_moved:
 			gold_room()
 		else:
 			print "I got no idea what that means"
@@ -48,12 +51,14 @@ def cthulhu_room():
 	print "Here you see the great evil Cthulhu"
 	print "He, it, whatever stares at you and you go insane"
 	print "Do you flee for your life or eat your head?"
+	print "1 = flee"
+	print "2 = eat your head"
 	
 	next = raw_input(prompt)
 	
-	if "flee" in next:
+	if "1" == next:
 		start()
-	elif "head" in next:
+	elif "2" == next:
 		dead("Well that was tasty!")
 	else:
 		cthulhu_room()
@@ -64,23 +69,27 @@ def dead(why):
 	exit(0)
 	
 def start():
-	"""Starts the game."""
+	"""Starts the game with 2 options."""
 	print "You are in a dark room"
 	print "There's a door to your right and left"
 	print "Which one do you take?"
+	print "1 = left"
+	print "2 = right"
 	
 	next = raw_input(prompt)
 	
-	if next == "left":
+	if next == "1":
 		bear_room()
-	elif next == "right":
+	elif next == "2":
 		cthulhu_room()
 	else:
-		dead("You stumble around the room until you starve")	
+		dead("You stumble around the room until you starve.")	
 
 start()
 
 #-------------------------
-# Study Drill
+# Study Drill & Notes
 
-# 
+# Difference between is and ==
+# http://www.mysamplecode.com/2012/11/python-difference-between-is-and-equals.html
+
