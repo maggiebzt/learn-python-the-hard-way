@@ -9,6 +9,7 @@ def gold_room():
 	print "Type number only."
 	
 	next = int(raw_input(prompt))
+	
 	if next < 50:
 		print "Nice, you're not greedy, you win!"
 		exit(0)
@@ -30,6 +31,7 @@ def bear_room():
 		print "1 = take honey"
 		print "2 = taunt bear"
 		print "3 = open door"
+		
 		next = raw_input(prompt)
 		
 		if next == "1":
