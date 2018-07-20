@@ -1,27 +1,36 @@
+# import modules
 import random
 from urllib import urlopen
 import sys
 
+# string of website url
 WORD_URL = "http://learncodethehardway.org/words.txt"
+
+# array variable
 WORDS = []
 
+# dictionary
 PHRASES = {
-	"class %%%(%%%):":
+	"class %%%(%%%):" :
 		"Make a class named %%% that is-a %%%.",
 	"class %%%(object):\n\tdef __init__(self, ***)" :
 		"class %%% has-a __init__ that takes self and *** parameters.",
 	"class %%%(object):\n\tdef ***(self, @@@)" :
 		"class %%% has-a function named *** that takes self and @@@ parameters.",
-	"*** = %%%()":
+	"*** = %%%()" :
 		"Set *** to an instance of class %%%",
-	"***.***(@@@)":
+	"***.***(@@@)" :
 		"From *** get the *** function, and call it with parameters self, @@@.",
-	"***.*** = '***'":
+	"***.*** = '***'" :
 		"From *** get the *** attribute and set it to '***'."
 }
 
 # do they want to drill phrases first
+# boolean variable
 PHRASE_FIRST = False
+
+# change phrase_first value to true if this line is run on terminal:
+# python ex41.py english
 if len(sys.argv) == 2 and sys.argv[1] == "english":
 	PHRASE_FIRST = True
 
@@ -29,6 +38,10 @@ if len(sys.argv) == 2 and sys.argv[1] == "english":
 for word in urlopen(WORD_URL).readlines():
 	WORDS.append(word.strip())
 
+# define function convert
+# assign however necessary amount of random words
+# to one of the values in the dictionary
+# user should practice typing what does it mean in English
 def convert(snippet, phrase):
 	class_names = [w.capitalize() for w in
 				   random.sample(WORDS, snippet.count("%%%"))]
